@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVVM Kotlin Breed Sample</string>
+    <string name="breeds_title">Raças de cães</string>
+
+    <string name="breed_empty">Nenhuma raça disponível :(</string>
+    <string name="breed_failed">Uma falha inesperada aconteceu =/, toque aqui para tentar novamente </string>
+</resources>

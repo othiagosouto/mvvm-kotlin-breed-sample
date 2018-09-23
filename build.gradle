@@ -3,27 +3,30 @@
 ext {
     // Sdk and Tools
     minSdkVersion = 19
-    targetSdkVersion = 27
-    compileSdkVersion = 27
-    buildToolsVersion = '27.0.3'
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.0'
 
 
     //Dependencies
     retrofitVersion = '2.3.0'
     retrfitGsonConverterVersion = '2.1.0'
-    supportLibraryVersion = '27.0.1'
+    supportLibraryVersion = '28.0.0'
+    supportDesignLibraryVersion = '28.0.0'
+    lifecycleVersion = '1.1.1'
 
     //Tests
     junitVersion = '4.12'
     mockitoVersion = '2.12.0'
-    espressoVersion = '3.0.1'
-    testRunnerVersion = '1.0.1'
+    espressoVersion = '3.0.2'
+    testRunnerVersion = '1.0.2'
 }
 
 buildscript {
-    ext.kotlin_version = '1.2.31'
-    ext.gradle_version = '3.0.1'
+    ext.kotlin_version = '1.2.50'
+    ext.gradle_version = '3.1.4'
     repositories {
+        mavenCentral()
         google()
         jcenter()
     }

@@ -36,13 +36,13 @@ class BreedsFragment : Fragment() {
         binding.recyclerView.adapter = BreedsAdapter(emptyList())
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
 
-        val obs =  object : Observer<MutableList<Breed>> {
+        val observer =  object : Observer<MutableList<Breed>> {
             override fun onChanged(t: MutableList<Breed>?) {
                 BindingAdapters.setItems(binding.recyclerView, t!!.toMutableList())
             }
 
         }
-        vm.breeds.observe(this, obs)
+        vm.breeds.observe(this, observer)
 
         return binding.root
     }

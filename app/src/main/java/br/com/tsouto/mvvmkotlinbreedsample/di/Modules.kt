@@ -5,6 +5,7 @@ import br.com.tsouto.mvvmkotlinbreedsample.data.BreedDataSource
 import br.com.tsouto.mvvmkotlinbreedsample.data.BreedRepository
 import br.com.tsouto.mvvmkotlinbreedsample.data.remote.DogCeoApi
 import br.com.tsouto.mvvmkotlinbreedsample.data.remote.DogCeoDataSource
+import org.koin.android.ext.koin.androidApplication
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
@@ -16,7 +17,7 @@ val BreedsModule = module {
 
     single  ("api"){DogCeoDataSource(get())  as BreedDataSource }
     single("repository") { BreedRepository(get("api")) as BreedDataSource}
-    viewModel { BreedsViewModel(get("repository"), get())}
+    viewModel { BreedsViewModel(get("repository"), androidApplication())}
 }
 
 

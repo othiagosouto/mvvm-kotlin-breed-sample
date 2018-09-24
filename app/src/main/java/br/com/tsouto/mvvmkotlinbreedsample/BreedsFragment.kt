@@ -10,29 +10,27 @@ import android.view.ViewGroup
 import br.com.tsouto.mvvmkotlinbreedsample.breeds.BreedsAdapter
 import br.com.tsouto.mvvmkotlinbreedsample.breeds.BreedsViewModel
 import br.com.tsouto.mvvmkotlinbreedsample.databinding.BreedsFragmentBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class BreedsFragment : Fragment() {
 
-    lateinit var viewModel: BreedsViewModel
-
+    val vm: BreedsViewModel by viewModel()
 
     companion object {
-        fun newInstance(viewModel: BreedsViewModel): BreedsFragment {
-            val fragment = BreedsFragment()
-            fragment.viewModel = viewModel
-            return fragment
+        fun newInstance(): BreedsFragment {
+            return BreedsFragment()
         }
     }
 
     override fun onStart() {
         super.onStart()
-        viewModel.load()
+        vm.load()
     }
 
     override fun onCreateView(@NonNull inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding : BreedsFragmentBinding = BreedsFragmentBinding.inflate(inflater, container, false)
-        binding.viewModel = viewModel
+        binding.viewModel = vm
         binding.recyclerView.adapter = BreedsAdapter(emptyList())
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         return binding.root

@@ -6,7 +6,6 @@ import br.com.tsouto.mvvmkotlinbreedsample.breeds.AdapterItemsContract
 
 class BindingAdapters {
 
-
     companion object {
         @BindingAdapter("items")
         @JvmStatic

@@ -1,5 +1,6 @@
 package br.com.tsouto.mvvmkotlinbreedsample.breeds
 
+import android.arch.lifecycle.ViewModel
 import android.content.Context
 import android.databinding.ObservableArrayList
 import android.databinding.ObservableBoolean
@@ -8,7 +9,7 @@ import br.com.tsouto.mvvmkotlinbreedsample.R
 import br.com.tsouto.mvvmkotlinbreedsample.data.Breed
 import br.com.tsouto.mvvmkotlinbreedsample.data.BreedDataSource
 
-class BreedsViewModel(val repository: BreedDataSource, val context: Context)  {
+class BreedsViewModel(val repository: BreedDataSource, val context: Context)  : ViewModel() {
 
 
     val breeds = ObservableArrayList<Breed>()

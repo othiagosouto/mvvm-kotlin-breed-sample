@@ -9,7 +9,7 @@ class BindingAdapters {
     companion object {
         @BindingAdapter("items")
         @JvmStatic
-        fun setItems(recyclerView: RecyclerView, items: List<Any>) {
+        fun setItems(recyclerView: RecyclerView, items: MutableList<Any>) {
 
             recyclerView.adapter.let {
                 if (it is AdapterItemsContract) {

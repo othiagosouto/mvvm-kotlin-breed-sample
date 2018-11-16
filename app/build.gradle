@@ -47,6 +47,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrfitGsonConverterVersion"
 
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+    implementation "android.arch.lifecycle:livedata:1.1.1"
 
 
     //Testes

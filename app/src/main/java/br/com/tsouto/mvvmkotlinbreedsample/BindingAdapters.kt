@@ -1,5 +1,6 @@
 package br.com.tsouto.mvvmkotlinbreedsample
 
+import android.arch.lifecycle.MutableLiveData
 import android.databinding.BindingAdapter
 import android.support.v7.widget.RecyclerView
 import br.com.tsouto.mvvmkotlinbreedsample.breeds.AdapterItemsContract
@@ -9,11 +10,14 @@ class BindingAdapters {
     companion object {
         @BindingAdapter("items")
         @JvmStatic
-        fun setItems(recyclerView: RecyclerView, items: MutableList<Any>) {
+        fun <T>setItems(recyclerView: RecyclerView, items: MutableLiveData<List<T>>) {
 
-            recyclerView.adapter.let {
+             recyclerView.adapter.let {
                 if (it is AdapterItemsContract) {
-                    it.replaceItems(items)
+                    val ref = it
+                    items.value?.let{
+                        ref.replaceItems(it)
+                    }
                 }
             }
         }

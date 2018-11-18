@@ -9,7 +9,7 @@ class BreedsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.breeds_activity)
-    addFragmentTo(R.id.content_frame, createFragment())
+        addFragmentTo(R.id.content_frame, createFragment())
         setSupportActionBar(toolbar)
     }
 

@@ -3,11 +3,11 @@
 ext {
     // Sdk and Tools
     minSdkVersion = 19
-    targetSdkVersion =28
+    targetSdkVersion = 28
     compileSdkVersion = 28
     buildToolsVersion = '28.0.3'
 
-    lifecycleVersion="1.1.1"
+    lifecycleVersion = "1.1.1"
 
     //Dependencies
     retrofitVersion = '2.4.0'

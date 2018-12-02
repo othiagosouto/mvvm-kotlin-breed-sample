@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModelProvider
 import br.com.tsouto.mvvmkotlinbreedsample.breeds.BreedsViewModel
 import br.com.tsouto.mvvmkotlinbreedsample.data.BreedDataSource
 
-class ViewModelFactory constructor(private val repository: BreedDataSource, private val application: Application) : ViewModelProvider.Factory {
+class BreedsViewModelFactory constructor(private val repository: BreedDataSource, private val application: Application) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
             with(modelClass) {
@@ -14,7 +14,7 @@ class ViewModelFactory constructor(private val repository: BreedDataSource, priv
                     isAssignableFrom(BreedsViewModel::class.java) ->
                         BreedsViewModel(repository, application)
                     else ->
-                        throw IllegalArgumentException("Unknown ViewModel class")
+                        throw IllegalArgumentException("Classe desconhecida.")
                 }
             } as T
 }
